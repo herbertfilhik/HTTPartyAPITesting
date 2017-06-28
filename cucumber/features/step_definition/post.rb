@@ -6,7 +6,7 @@ Dado(/^que eu envie os parâmetros corretos para o endpoint clientes$/) do
     "usuario": Faker::Pokemon.name,
     "senha": Faker::Base.numerify('inicial####')
   }.to_json
-  @post_clientes = HTTParty.post 'https://test-eng-api.herokuapp.com/claim_challenge',
+  @post_clientes = HTTParty.post 'https://test-eng-api.herokuapp.com/last_step?firstKey=redKey&token=xyx',
     :body => @body,
     :headers => {
         "Content-Type" => 'application/json'
